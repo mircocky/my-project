@@ -7,16 +7,16 @@ async function createUser(data: FormData) {
   "use server"
 
   const name = data.get("name")?.valueOf()
-  const email = data.get("email")?.valueOf()
-  if (typeof name !== "string" || name.length === 0) {
-    throw new Error("Invalid Title")
-  }
+  // const email = data.get("email")?.valueOf()
+  // if (typeof name !== "string" || name.length === 0) {
+  //   throw new Error("Invalid Title")
+  // }
   
-  if (typeof email !== "string" || email.length === 0) {
-    throw new Error("Invalid Title")
-  }
+  // if (typeof email !== "string" || email.length === 0) {
+  //   throw new Error("Invalid Title")
+  // }
 
-  await prisma.user.create({ data: { name, email } })
+  // await prisma.user.create({ data: { name, email } })
   //  redirect("/clients")
 }
 
