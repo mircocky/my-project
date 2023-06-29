@@ -9,10 +9,7 @@ function getUsers() {
 export default async function Clients() {
 
   const users = await getUsers()
-  type users = {
-    name:string,
-    email:string
-  }
+
 
   return (
     <main>
