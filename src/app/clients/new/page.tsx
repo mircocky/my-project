@@ -6,8 +6,8 @@ async function createUser(data: FormData) {
     
   "use server"
 
-  const name = data.get("name")?.valueOf()
-  // const email = data.get("email")?.valueOf()
+  // const name = data.get("name")?.valueOf()
+  // // const email = data.get("email")?.valueOf()
   // if (typeof name !== "string" || name.length === 0) {
   //   throw new Error("Invalid Title")
   // }
@@ -16,11 +16,18 @@ async function createUser(data: FormData) {
   //   throw new Error("Invalid Title")
   // }
 
-  // await prisma.user.create({ data: { name, email } })
+  // await prisma.user.create({ data: { name, eamil } })
   //  redirect("/clients")
 }
 
-export default function Page() {
+export default async function Page() {
+
+const result = await prisma.user.create({
+    data: {
+          name:"hahaha",
+          email:"hohoho@hohooho.com"
+    },
+});
 
   return (
     <>
