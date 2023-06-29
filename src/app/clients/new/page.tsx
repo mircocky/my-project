@@ -17,7 +17,7 @@ async function createUser(data: FormData) {
   }
 
   await prisma.user.create({ data: { name, email } })
-   redirect("/clients")
+  //  redirect("/clients")
 }
 
 export default function Page() {
