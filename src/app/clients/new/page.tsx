@@ -6,21 +6,22 @@ async function createUser(data: FormData) {
     
   "use server"
 
-  const name:any = data.get("name")?.valueOf()
-  const email:any = data.get("email")?.valueOf()
-//   if (typeof name !== "string" || name.length === 0) {
-//     throw new Error("Invalid Title")
-//   }
+  const name = data.get("name")?.valueOf()
+  const email = data.get("email")?.valueOf()
+  if (typeof name !== "string" || name.length === 0) {
+    throw new Error("Invalid Title")
+  }
   
-//   if (typeof email !== "string" || email.length === 0) {
-//     throw new Error("Invalid Title")
-//   }
+  if (typeof email !== "string" || email.length === 0) {
+    throw new Error("Invalid Title")
+  }
 
   await prisma.user.create({ data: { name, email } })
    redirect("/clients")
 }
 
 export default function Page() {
+
   return (
     <>
       <header className="flex justify-between items-center mb-4">
